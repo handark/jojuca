@@ -1,3 +1,5 @@
+'use strict'
+
 /********************************** 
    Author: Jose Luis Orozco
    Version: 0.0.1
