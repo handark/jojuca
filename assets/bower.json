@@ -1,0 +1,24 @@
+{
+  "name": "jojuca",
+  "version": "0.0.0",
+  "homepage": "https://github.com/handark/jojuca",
+  "authors": [
+    "Jose Luis Orozco Mejia <handark@gmail.com>"
+  ],
+  "description": "Nube de Utilidades",
+  "main": "index",
+  "keywords": [
+    "jojuca",
+    "nube",
+    "utilidades",
+    "recordatorios",
+    "anotaciones",
+    "enlaces",
+    "aplicaciones"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "swiper": "~3.0.6",
+    "angular-ui-utils": "bower"
+  }
+}
