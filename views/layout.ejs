@@ -1,232 +1,452 @@
-<!doctype html>
-<html lang="es" ng-app="JojucaApp" >
-   <head>
-    
-         <meta charset="utf-8" />
-      
-         <title>Jojuca | Nube de Utilidades</title>           
-         <meta name="description" content="" />
-      
-         <!-- Meta Viewport -->
-         <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-         <!-- All CSS Styles -->
-         <link type="text/css" href="styles/bootstrap.css" rel="stylesheet" media="screen" />
-         <link type="text/css" href="styles/animate.css" rel="stylesheet" media="screen" />
-         <link type="text/css" href="bower_components/swiper/dist/css/swiper.css" rel="stylesheet" media="screen" />
-         <link type="text/css" href="styles/owl.carousel.css" rel="stylesheet" media="screen" />
-         <link type="text/css" href="styles/owl.theme.css" rel="stylesheet" media="screen" />
-         <link type="text/css" href="styles/magnific-popup.css" rel="stylesheet" media="screen" />
-         <link type="text/css" href="styles/styles/style-pink.css" rel="stylesheet" media="screen" />   
-         <link type="text/css" href="styles/font-awesome.min.css" rel="stylesheet" media="screen" />
-    
-         <!-- Media Queries -->
-         <link type="text/css" href="styles/media.css" rel="stylesheet" media="screen" />
+<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Jojuca | Nube de Utilidades</title>
 
-         <link type="text/css" href="styles/importer.css" rel="stylesheet" media="screen" />
+        <!-- Vendor CSS -->
+        <link href="vendors/fullcalendar/fullcalendar.css" rel="stylesheet">
+        <link href="vendors/animate-css/animate.min.css" rel="stylesheet">
+        <link href="vendors/sweet-alert/sweet-alert.min.css" rel="stylesheet">
             
-         <!-- Modernizr -->
-         <script type="text/javascript" src="js/libs/modernizr.js"></script>   
-    
-         <!-- Comments for IE8 and Lower -->        
-    
-         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-         <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-         <![endif]-->     
-         
-         <!-- Gradient Support IE9 -->
-         <!--[if gte IE 9]>
-            <style type="text/css">
-              .gradient {
-                 filter: none;
-              }
-            </style>
-         <![endif]--> 
-      
-  </head>
-  <body class="particles">
-          
-        <!-- Preloader -->
-         <div id="loader-wrapper">
-             <div id="loader"></div>
-         </div>
-         <!-- Preloader End -->
-      
-         <!-- Header -->
-         <header>
-         
-               <!-- Intro -->
-               <div id="intro" class="overlay-gradient" data-scroll-index="0">        
-
-                        <!-- Top Bar -->
-                        <div class="top-bar">
-               
-                           <div class="container">
-                              <div class="row">
-                              
-                                 <div class="col-md-12">
-                                 
-                                       <!-- Logo -->
-                                       <div class="logo"><a title="" href="#">Jojuca</a></div>
-                                       <!-- Logo End -->
-                     
-                                       <!-- Menu -->
-                                       <div class="nav">
-                     
-                                          <nav class="navbar navbar-default" role="navigation">
-                                          
-                                             <!-- Mobile Button -->
-                                           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                                                <span class="sr-only">Toggle navigation</span>
-                                                <span class="icon-bar"></span>
-                                                <span class="icon-bar"></span>
-                                                <span class="icon-bar"></span>
-                                             </button>
-                                             <!-- Mobile Button End -->
-                                                             
-                                             <ul class="collapse navbar-collapse navbar-ex1-collapse">
-                                                <li><a data-scroll-nav="0" title="">Inicio</a></li>
-                                                <li><a data-scroll-nav="1" title="">Caracteristicas</a></li>
-                                                <li><a data-scroll-nav="2" title="">Galeria</a></li>
-                                                <li><a data-scroll-nav="3" title="">Descarga</a></li>
-                                                <li><a data-toggle="modal" data-target="#modalIngresar" title="">Ingresar</a></li>
-                                                <li class="download-btn"><a data-scroll-nav="5" title=""><i class="fa fa-sign-in"></i> Crear Cuenta Gratis</a></li>
-                                                
-                                             </ul>                                       
-                                          </nav>
-                        
-                                       </div>
-                                       <!-- Menu End -->
-                                       
-                                 </div>
-               
-                              </div><!-- .row End -->                  
-                           </div><!-- .container End -->
-                           
-                                             
+        <!-- CSS -->
+        <link href="styles/app.css" rel="stylesheet">
+        
+    </head>
+    <body class="toggled sw-toggled" >
+        <header id="header">
+            <ul class="header-inner">
+                <li id="menu-trigger" data-trigger="#sidebar">
+                    <div class="line-wrap">
+                        <div class="line top"></div>
+                        <div class="line center"></div>
+                        <div class="line bottom"></div>
+                    </div>
+                </li>
+            
+                <li class="logo hidden-xs logo-jojuca">
+                    <a href="/">
+                        <i class="md md-phonelink icono-logo-jojuca"> </i> Jojuca 
+                    </a>
+                </li>
+                
+                <li class="pull-right">
+                <ul class="top-menu">
+                    <li id="toggle-width">
+                        <div class="toggle-switch">
+                            <input id="tw-switch" type="checkbox" hidden="hidden">
+                            <label for="tw-switch" class="ts-helper"></label>
                         </div>
-                        <!-- Top Bar End -->
-                        
-                        <div class="container">
-                           <div class="row">
-                              
-                                 
-                                 <div class="col-md-12">
-                                    
-                                       <!-- Intro Heading -->
-                                       <div class="headline">
-                                       
-                                          <h1 class="wow fadeInDown">Simplifica tu vida en la nube</h1>
-                                          <p class="wow fadeInDown" data-wow-delay="0.5s">
-                                            Jojuca te permite centralizar en un solo lugar utilidades de uso diario como son accesos a Aplicaciones Web, Anotaciones, Recordatorios, Marcadores y mucha mas. 
-                                          </p>
-                                       </div>
-                                       <!-- Intro Heading End -->
-                                       
-                                       
-                                       <!-- Phone Carousel -->
-                                       <div class="swiper-container wow fadeIn" data-wow-delay="1.5s">
-                                       
-                                          <!-- Arrows -->
-                                          <a class="arrow-left" href="#" title=""><i class="fa fa-angle-left"></i></a>
-                                          <a class="arrow-right" href="#" title=""><i class="fa fa-angle-right"></i></a>
-                                          <!-- Arrows End -->
-                                          
-                                          <div class="swiper-wrapper">   
-                                       
-                                             <!-- First Slide -->   
-                                             <div class="swiper-slide">
-                                                <img class="img-responsive" src="images/bg/phone1.png" alt="">
-                                             </div>
-                                             
-                                             <!-- Second Slide --> 
-                                             <div class="swiper-slide">
-                                                <img class="img-responsive" src="images/bg/phone2.png" alt="">
-                                             </div>
-                                             
-                                             <!-- Thrid Slide --> 
-                                             <div class="swiper-slide">
-                                                <img class="img-responsive" src="images/bg/phone3.png" alt="">
-                                             </div>
-                                       
-                                          </div>      
-                                       </div>
-                                       <!-- Phone Carousel End -->
-                                 
-                                 </div>
-                           
-                           
-                           </div><!-- .row End -->
-                        </div><!-- .container End -->
-               
-               </div>
-               <!-- Intro End -->
-         
-         </header>
-         <!-- Header -->
-         
-         
-         <!-- Content -->
-         <div id="content">
-
-              <%- body %>
+                    </li>
+                    <li id="top-search">
+                        <a class="tm-search" href=""></a>
+                    </li>
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="tm-notification" href=""><i class="tmn-counts">9</i></a>
+                        <div class="dropdown-menu dropdown-menu-lg pull-right">
+                            <div class="listview" id="notifications">
+                                <div class="lv-header">
+                                    Recordatorios
+                    
+                                    <ul class="actions">
+                                        <li class="dropdown">
+                                            <a href="" data-clear="notification">
+                                                <i class="md md-done-all"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="lv-body c-overflow">
+                                    <a class="lv-item" href="">
+                                        <div class="media">
+                                            <div class="pull-left">
+                                                <img class="lv-img-sm" src="img/profile-pics/1.jpg" alt="">
+                                            </div>
+                                            <div class="media-body">
+                                                <div class="lv-title">David Belle</div>
+                                                <small class="lv-small">Cum sociis natoque penatibus et magnis dis parturient montes</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a class="lv-item" href="">
+                                        <div class="media">
+                                            <div class="pull-left">
+                                                <img class="lv-img-sm" src="img/profile-pics/2.jpg" alt="">
+                                            </div>
+                                            <div class="media-body">
+                                                <div class="lv-title">Jonathan Morris</div>
+                                                <small class="lv-small">Nunc quis diam diamurabitur at dolor elementum, dictum turpis vel</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a class="lv-item" href="">
+                                        <div class="media">
+                                            <div class="pull-left">
+                                                <img class="lv-img-sm" src="img/profile-pics/3.jpg" alt="">
+                                            </div>
+                                            <div class="media-body">
+                                                <div class="lv-title">Fredric Mitchell Jr.</div>
+                                                <small class="lv-small">Phasellus a ante et est ornare accumsan at vel magnauis blandit turpis at augue ultricies</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a class="lv-item" href="">
+                                        <div class="media">
+                                            <div class="pull-left">
+                                                <img class="lv-img-sm" src="img/profile-pics/4.jpg" alt="">
+                                            </div>
+                                            <div class="media-body">
+                                                <div class="lv-title">Glenn Jecobs</div>
+                                                <small class="lv-small">Ut vitae lacus sem ellentesque maximus, nunc sit amet varius dignissim, dui est consectetur neque</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a class="lv-item" href="">
+                                        <div class="media">
+                                            <div class="pull-left">
+                                                <img class="lv-img-sm" src="img/profile-pics/4.jpg" alt="">
+                                            </div>
+                                            <div class="media-body">
+                                                <div class="lv-title">Bill Phillips</div>
+                                                <small class="lv-small">Proin laoreet commodo eros id faucibus. Donec ligula quam, imperdiet vel ante placerat</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                    
+                                <a class="lv-footer" href="">View Previous</a>
+                            </div>
+                    
+                        </div>
+                    </li>
+                    <li class="dropdown hidden-xs">
+                        <a data-toggle="dropdown" class="tm-task" href=""><i class="tmn-counts">2</i></a>
+                        <div class="dropdown-menu pull-right dropdown-menu-lg">
+                            <div class="listview">
+                                <div class="lv-header">
+                                    Tareas
+                                </div>
+                                <div class="lv-body">
+                                    <div class="lv-item">
+                                        <div class="lv-title m-b-5">HTML5 Validation Report</div>
+                    
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
+                                                <span class="sr-only">95% Complete (success)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lv-item">
+                                        <div class="lv-title m-b-5">Google Chrome Extension</div>
+                    
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                                <span class="sr-only">80% Complete (success)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lv-item">
+                                        <div class="lv-title m-b-5">Social Intranet Projects</div>
+                    
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                                <span class="sr-only">20% Complete</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lv-item">
+                                        <div class="lv-title m-b-5">Bootstrap Admin Template</div>
+                    
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                                <span class="sr-only">60% Complete (warning)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lv-item">
+                                        <div class="lv-title m-b-5">Youtube Client App</div>
+                    
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                                <span class="sr-only">80% Complete (danger)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <a class="lv-footer" href="">View All</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="tm-settings" href=""></a>
+                        <ul class="dropdown-menu dm-icon pull-right">
+                            <li>
+                                <a data-action="fullscreen" href=""><i class="md md-fullscreen"></i> Ver en Pantalla Completa</a>
+                            </li>
+                            <li>
+                                <a data-action="clear-localstorage" href=""><i class="md md-delete"></i> Restablecer Configuración por Defecto</a>
+                            </li>
+                            <li>
+                                <a href=""><i class="md md-settings"></i> Configuración de Jojuca</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="hidden-xs" id="chat-trigger" data-trigger="#chat">
+                        <a class="tm-chat" href=""></a>
+                    </li>
+                    </ul>
+                </li>
+            </ul>
             
- 
-         
-         </div>
-         <!-- Content End -->
-         
-         
-         <!-- Footer -->
-         <footer>
+            <!-- Top Search Content -->
+            <div id="top-search-wrap">
+                <input type="text">
+                <i id="top-search-close">&times;</i>
+            </div>
+        </header>
+        
+        <section id="main">
+            <aside id="sidebar">
+                <div class="sidebar-inner">
+                    <div class="si-inner">
+                        <div class="profile-menu">
+                            <a href="">
+                                <div class="profile-pic">
+                                    <img src="img/profile-pics/1.jpg" alt="">
+                                </div>
+                                
+                                <div class="profile-info">
+                                    Jose Luis Orozco
+                                    
+                                    <i class="md md-arrow-drop-down"></i>
+                                </div>
+                            </a>
+                            
+                            <ul class="main-menu">
+                                <li>
+                                    <a href=""><i class="md md-person"></i> Mi Cuenta</a>
+                                </li>
+                                <li>
+                                    <a href=""><i class="md md-settings"></i> Configuración</a>
+                                </li>
+                                <li>
+                                    <a href=""><i class="md md-history"></i> Salir</a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <ul class="main-menu">
+                            <li><a href="/"><i class="md md-home"></i> Inicio</a></li>
+                            <li><a href="/aplicaciones"><i class="md md-view-module"></i> Aplicaciones</a></li>
+                            <li><a href="/recordatorios"><i class="md md-alarm"></i> Recordatorios</a></li>
+                            <li><a href="/tareas"><i class="md md-view-list"></i> Tareas</a></li>
+                            <li><a href="/anotaciones"><i class="md md-my-library-books"></i> Libro de Anotaciones</a></li>
+                            <li><a href="/marcadores"><i class="md md-grade"></i> Marcadores</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+            
+            <aside id="chat">
+                <ul class="tab-nav tn-justified" role="tablist">
+                    <li role="presentation" class="active"><a href="#friends" aria-controls="friends" role="tab" data-toggle="tab">Amigos</a></li>
+                    <li role="presentation"><a href="#online" aria-controls="online" role="tab" data-toggle="tab">En Linea</a></li>
+                </ul>
+            
+                <div class="chat-search">
+                    <div class="fg-line">
+                        <input type="text" class="form-control" placeholder="Search People">
+                    </div>
+                </div>
+                
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="friends">
+                        <div class="listview">
+                            <a class="lv-item" href="">
+                                <div class="media">
+                                    <div class="pull-left p-relative">
+                                        <img class="lv-img-sm" src="img/profile-pics/2.jpg" alt="">
+                                        <i class="chat-status-busy"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="lv-title">Jonathan Morris</div>
+                                        <small class="lv-small">Available</small>
+                                    </div>
+                                </div>
+                            </a>
+                            
+                            <a class="lv-item" href="">
+                                <div class="media">
+                                    <div class="pull-left">
+                                        <img class="lv-img-sm" src="img/profile-pics/1.jpg" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="lv-title">David Belle</div>
+                                        <small class="lv-small">Last seen 3 hours ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            
+                            <a class="lv-item" href="">
+                                <div class="media">
+                                    <div class="pull-left p-relative">
+                                        <img class="lv-img-sm" src="img/profile-pics/3.jpg" alt="">
+                                        <i class="chat-status-online"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="lv-title">Fredric Mitchell Jr.</div>
+                                        <small class="lv-small">Availble</small>
+                                    </div>
+                                </div>
+                            </a>
+                            
+                            <a class="lv-item" href="">
+                                <div class="media">
+                                    <div class="pull-left p-relative">
+                                        <img class="lv-img-sm" src="img/profile-pics/4.jpg" alt="">
+                                        <i class="chat-status-online"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="lv-title">Glenn Jecobs</div>
+                                        <small class="lv-small">Availble</small>
+                                    </div>
+                                </div>
+                            </a>
+                            
+                            <a class="lv-item" href="">
+                                <div class="media">
+                                    <div class="pull-left">
+                                        <img class="lv-img-sm" src="img/profile-pics/5.jpg" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="lv-title">Bill Phillips</div>
+                                        <small class="lv-small">Last seen 3 days ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            
+                            <a class="lv-item" href="">
+                                <div class="media">
+                                    <div class="pull-left">
+                                        <img class="lv-img-sm" src="img/profile-pics/6.jpg" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="lv-title">Wendy Mitchell</div>
+                                        <small class="lv-small">Last seen 2 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="lv-item" href="">
+                                <div class="media">
+                                    <div class="pull-left p-relative">
+                                        <img class="lv-img-sm" src="img/profile-pics/7.jpg" alt="">
+                                        <i class="chat-status-busy"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="lv-title">Teena Bell Ann</div>
+                                        <small class="lv-small">Busy</small>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="online">
+                        <div class="listview">
+                            <a class="lv-item" href="">
+                                <div class="media">
+                                    <div class="pull-left p-relative">
+                                        <img class="lv-img-sm" src="img/profile-pics/2.jpg" alt="">
+                                        <i class="chat-status-busy"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="lv-title">Jonathan Morris</div>
+                                        <small class="lv-small">Available</small>
+                                    </div>
+                                </div>
+                            </a>
+                            
+                            <a class="lv-item" href="">
+                                <div class="media">
+                                    <div class="pull-left p-relative">
+                                        <img class="lv-img-sm" src="img/profile-pics/3.jpg" alt="">
+                                        <i class="chat-status-online"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="lv-title">Fredric Mitchell Jr.</div>
+                                        <small class="lv-small">Availble</small>
+                                    </div>
+                                </div>
+                            </a>
+                            
+                            <a class="lv-item" href="">
+                                <div class="media">
+                                    <div class="pull-left p-relative">
+                                        <img class="lv-img-sm" src="img/profile-pics/4.jpg" alt="">
+                                        <i class="chat-status-online"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="lv-title">Glenn Jecobs</div>
+                                        <small class="lv-small">Availble</small>
+                                    </div>
+                                </div>
+                            </a>
 
-               <div class="container">
-                  <div class="row">
-                           <div class="col-md-12">
-                                                         <!-- ScrollToTop -->         
-                              <a class="scrollup" href="#" title=""><i class="fa fa-angle-up"></i></a>         
-                              <!-- ScrollToTop End -->
-                              <p>
-                                 <a href="http://joseorozco.co" target="_blank" >Jose Luis Orozco</a> 
-                                 <br>
-                                 Copyright &copy; 2015
-                              </p>
+                            <a class="lv-item" href="">
+                                <div class="media">
+                                    <div class="pull-left p-relative">
+                                        <img class="lv-img-sm" src="img/profile-pics/7.jpg" alt="">
+                                        <i class="chat-status-busy"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="lv-title">Teena Bell Ann</div>
+                                        <small class="lv-small">Busy</small>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            
+            
+            <section id="content">
+                <div class="container">
+                    <%- body %>
+                </div>
+            </section>
+        </section>
+        
 
-                           </div>
-                                       
-                  </div><!-- .row End -->
-               </div><!-- .container End -->
-         
-         </footer>
-         <!-- Footer -->
+        
+        <!-- Javascript Libraries -->
+        <script src="js/libs/jquery-2.1.1.min.js"></script>
+        <script src="js/libs/bootstrap.min.js"></script>
+        
+        <script src="vendors/flot/jquery.flot.min.js"></script>
+        <script src="vendors/flot/jquery.flot.resize.min.js"></script>
+        <script src="vendors/flot/plugins/curvedLines.js"></script>
+        <script src="vendors/sparklines/jquery.sparkline.min.js"></script>
+        <script src="vendors/easypiechart/jquery.easypiechart.min.js"></script>
+        
+        <script src="vendors/fullcalendar/lib/moment.min.js"></script>
+        <script src="vendors/fullcalendar/fullcalendar.min.js"></script>
+        <script src="vendors/simpleWeather/jquery.simpleWeather.min.js"></script>
+        <script src="vendors/auto-size/jquery.autosize.min.js"></script>
+        <script src="vendors/nicescroll/jquery.nicescroll.min.js"></script>
+        <script src="vendors/waves/waves.min.js"></script>
+        <script src="vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+        <script src="vendors/sweet-alert/sweet-alert.min.js"></script>
+        
+        <script src="js/libs/flot-charts/curved-line-chart.js"></script>
+        <script src="js/libs/flot-charts/line-chart.js"></script>
+        <script src="js/libs/charts.js"></script>
+        
+        <script src="js/public/functions.js"></script>
+        
 
-
-     
-         <!-- Javascript Libs -->
-         <script type="text/javascript" src="js/dependencies/sails.io.js"></script>   
-         <script type="text/javascript" src="js/libs/jquery-1.11.2.min.js"></script>     
-         <script type="text/javascript" src="js/libs/bootstrap.min.js"></script> 
-         <script type="text/javascript" src="js/libs/jquery.easing.1.3.js"></script>
-         <script type="text/javascript" src="js/libs/scrollIt.js"></script>         
-         <script type="text/javascript" src="bower_components/swiper/dist/js/swiper.min.js"></script>
-         <script type="text/javascript" src="js/libs/owl.carousel.min.js"></script>
-         <script type="text/javascript" src="js/libs/jquery.magnific-popup.min.js"></script>
-         <script type="text/javascript" src="js/libs/wow.min.js"></script>
-         <script type="text/javascript" src="js/libs/jquery.stellar.min.js"></script>
-         <script type="text/javascript" src="js/libs/jquery.ajaxchimp.min.js"></script>
-         <script type="text/javascript" src="js/libs/jquery.particleground.min.js"></script>
-         <script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
-         <script type="text/javascript" src="js/public/custom.js"></script>
-
-         <!-- Angular -->
-         <script type="text/javascript" src="bower_components/angular/angular.js"></script>
-         <script src="bower_components/angular-ui-utils/ui-utils.js" ></script>
-
-         <!-- App scripts -->
-        <script type="text/javascript" src="js/public/app.js"></script>
-        <script type="text/javascript" src="js/public/homepage.js"></script>
-  </body>
-</html>
+        
+    </body>
+  </html>

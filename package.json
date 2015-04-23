@@ -2,8 +2,8 @@
   "name": "jojuca",
   "private": true,
   "version": "0.0.0",
-  "description": "a Sails application",
-  "keywords": [],
+  "description": "Nube de Utilidades",
+  "keywords": ["jojuca","anotaciones","recordatorios","evernote","utilidades","aplicaciones"],
   "dependencies": {
     "ejs": "~0.8.4",
     "grunt": "0.4.2",
@@ -32,8 +32,8 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/chepe/jojuca.git"
+    "url": "git://github.com/handark/jojuca.git"
   },
-  "author": "chepe",
+  "author": "Jose Luis Orozco <handark@gmail.com>",
   "license": ""
 }

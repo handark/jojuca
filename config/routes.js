@@ -34,6 +34,21 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
+  },
+  '/aplicaciones': {
+    view: 'aplicaciones/index'
+  },
+  '/recordatorios': {
+    view: 'recordatorios/index'
+  },
+  '/tareas': {
+    view: 'tareas/index'
+  },
+  '/anotaciones': {
+    view: 'anotaciones/index'
+  },
+  '/marcadores': {
+    view: 'marcadores/index'
   }
 
   /***************************************************************************
