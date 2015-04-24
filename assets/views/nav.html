@@ -1,0 +1,38 @@
+<!-- Barra de Menu Lateral -->
+<aside id="sidebar">
+    <div class="sidebar-inner">
+        <div class="si-inner">
+            <div class="profile-menu">
+                <a href="">
+                    <div class="profile-pic">
+                        <img src="img/profile-pics/1.jpg" alt="">
+                    </div>
+                    
+                    <div class="profile-info">
+                        Jose Luis Orozco
+                        
+                        <i class="md md-arrow-drop-down"></i>
+                    </div>
+                </a>
+                
+                <ul class="main-menu">
+                    <li>
+                        <a href=""><i class="md md-person"></i> Mi Cuenta</a>
+                    </li>
+                    <li>
+                        <a href=""><i class="md md-settings"></i> Configuración</a>
+                    </li>
+                    <li>
+                        <a href=""><i class="md md-history"></i> Salir</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <ul class="main-menu">
+                <li ng-repeat="item in menu" >
+                    <a href="{{item.ruta}}"><i class="{{item.icono}}"></i> {{item.titulo}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</aside>
