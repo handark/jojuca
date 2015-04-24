@@ -1,16 +1,75 @@
 'use strict'
 
-var app = angular.module('JojucaApp', ['ui.utils']);
+/**
+ ** JOJUCA | Nube de Utilidades de uso diario para mejorar la productividad
+ ** Autor: Jose Luis Orozco <handark@gmail.com>
+**/
+var app = angular.module('JojucaApp', ['ui.utils','ngRoute']);
 
-app.controller('AppCtrl', ['$scope', 'menuService', function($scope, menuService) {
+/**
+ ** CONFIGURACION GENERAL DE LA APLICACION
+**/
+app.config(['$routeProvider',function($routeProvider) {
+  
+  var routes = [
+            'index',
+            'aplicaciones/index', 
+            'recordatorios/index',
+            'tareas/index',
+            'anotaciones/index',
+            'marcadores/index'
+        ]
 
+  var setRoutes = function(route) {
+        var config, url;
+        url = '/' + route;
+        config = {
+          templateUrl: 'views/' + route + '.html'
+        };
+        $routeProvider.when(url, config);
+        return $routeProvider;
+      };
+
+  routes.forEach(function(route) {
+    return setRoutes(route);
+  });
+
+  return $routeProvider.when('/', {
+      redirectTo: '/index'
+    }).when('/404', {
+      templateUrl: 'views/pages/404.html'
+    }).otherwise({
+      redirectTo: '/404'
+    });
+
+}]);
+
+/**
+ ** CONTROLADOR GLOBAL DE LA APLICACION
+**/
+app.controller('AppCtrl', ['$scope', function($scope) {
+
+
+  
+}]);
+
+/**
+ ** CONTROLADOR DEL HEADER DE LA APLICACION
+**/
+app.controller('HeaderCtrl', ['$scope', function($scope){
+  
+}]);
+
+/**
+ ** CONTROLADOR DEL MENU LATERAL DE LA APLICACION
+**/
+app.controller('NavCtrl', ['$scope','menuService', function($scope,menuService){
+    
   $scope.selected = null;
   
   cargarMenu();
   
   function cargarMenu() {
-    
-    $('.button-collapse').sideNav();
 
     menuService.cargar()
       .then(function(menu){
@@ -23,47 +82,6 @@ app.controller('AppCtrl', ['$scope', 'menuService', function($scope, menuService
     console.dir(item);
     $scope.selected = item;
   }
-  
-}])
 
-
-app.service('menuService', ['$q', function($q) {
-
-  var menuPagina = [{
-      titulo: 'Crear Cuenta',
-      ruta: '#/crear-cuenta',
-      icono: 'fa fa-user-plus '
-  }, {
-      titulo: 'Acceder',
-      ruta: '#/acceder',
-      icono: 'fa fa-sign-in'
-  }];
-
-  var menuApp = [{
-      titulo: 'Aplicaciones',
-      ruta: '#/aplicaciones',
-      icono: 'icon-apps'
-  }, {
-      titulo: 'Anotaciones',
-      ruta: '#/anotaciones',
-      icono: 'icon-apps'
-  }, {
-      titulo: 'Recordatorios',
-      ruta: '#/recordatorios',
-      icono: 'icon-apps'
-  }, {
-      titulo: 'Enlaces',
-      ruta: '#/enlaces',
-      icono: 'icon-apps'
-  }];
-
-  // Promise-based API
-  return {
-      cargar: function() {
-          if(sessionStorage.getItem('usuarioLogueado'))
-            return $q.when(menuApp);
-          else
-            return $q.when(menuPagina);
-      }
-  };
 }]);
+

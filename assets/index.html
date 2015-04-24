@@ -1,10 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-</head>
-<body>
-	
-</body>
-</html>
+<html lang="es" ng-app="JojucaApp" >
+<!--[if IE 9 ]><html class="ie9" lang="es" ng-app="JojucaApp"><![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Nube de utilidades de uso diario que mejoran tu productividad">
+        <meta name="keywords" content="jojuca,anotaciones,utilidades,recordatorios,taras,aplicaciones,marcadores,evernote">
+        <meta name="author" content="Jose Luis Orozco <handark@gmail.com>">
+        <title>Jojuca | Nube de Utilidades</title>
+
+        <!-- Vendor CSS -->
+        <link href="vendors/fullcalendar/fullcalendar.css" rel="stylesheet">
+        <link href="vendors/animate-css/animate.min.css" rel="stylesheet">
+        <link href="vendors/sweet-alert/sweet-alert.min.css" rel="stylesheet">
+            
+        <!-- CSS -->
+        <link href="styles/app.css" rel="stylesheet">
+        
+    </head>
+    <body class="toggled sw-toggled" >
+
+        <!-- Cabecera de la Pagina -->
+        <section ng-include=" 'views/header.html' " ng-controller="HeaderCtrl" ></section>
+        
+        <section id="main">
+            
+            <!-- Menu Lateral de Navegacion -->
+            <section ng-include=" 'views/nav.html' " ng-controller="NavCtrl" >
+                
+            </section>
+
+            <section ng-include=" 'views/chat.html' " ></section>
+            
+            <!-- Vistas -->
+            <section id="content">
+                <div class="container" ng-view >
+                    
+                </div>
+            </section>
+
+        </section>
+        
+        
+        <!-- Libraries Generales -->
+        <script src="js/libs/jquery-2.1.1.min.js"></script>
+        <script src="js/libs/bootstrap.min.js"></script>
+        
+        <script src="vendors/flot/jquery.flot.min.js"></script>
+        <script src="vendors/flot/jquery.flot.resize.min.js"></script>
+        <script src="vendors/flot/plugins/curvedLines.js"></script>
+        <script src="vendors/sparklines/jquery.sparkline.min.js"></script>
+        <script src="vendors/easypiechart/jquery.easypiechart.min.js"></script>
+        
+        <script src="vendors/fullcalendar/lib/moment.min.js"></script>
+        <script src="vendors/fullcalendar/fullcalendar.min.js"></script>
+        <script src="vendors/simpleWeather/jquery.simpleWeather.min.js"></script>
+        <script src="vendors/auto-size/jquery.autosize.min.js"></script>
+        <script src="vendors/nicescroll/jquery.nicescroll.min.js"></script>
+        <script src="vendors/waves/waves.min.js"></script>
+        <script src="vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+        <script src="vendors/sweet-alert/sweet-alert.min.js"></script>
+        
+        <script src="js/libs/flot-charts/curved-line-chart.js"></script>
+        <script src="js/libs/flot-charts/line-chart.js"></script>
+        <script src="js/libs/charts.js"></script>
+
+          <!-- Angular -->
+         <script type="text/javascript" src="vendors/angular/angular.js"></script>
+         <script src="vendors/angular-route/angular-route.min.js" ></script>
+         <script src="vendors/angular-ui-utils/ui-utils.js" ></script>
+        
+        <!-- Librerias de la Aplicacion -->
+        <script src="js/public/functions.js"></script>
+        <script src="js/public/app.js"></script>
+        <script src="js/public/servicios.js"></script>
+        
+
+        
+    </body>
+  </html>
