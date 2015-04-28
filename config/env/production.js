@@ -35,4 +35,8 @@ module.exports = {
   //   level: "silent"
   // }
 
+  //Esto es para que pueda funcionar en C9 
+  port: process.env.PORT,
+  host: process.env.IP
+
 };
