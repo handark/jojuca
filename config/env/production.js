@@ -36,7 +36,7 @@ module.exports = {
   // }
 
   //Esto es para que pueda funcionar en C9 
-  port: process.env.PORT,
-  host: process.env.IP
+  // port: process.env.PORT,
+  // host: process.env.IP
 
 };
