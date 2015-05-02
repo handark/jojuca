@@ -11347,7 +11347,7 @@ body #content {
   }
 }
 #header {
-  background: #009688;
+  background: #263238;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
   height: 65px;
   position: fixed;
@@ -11740,7 +11740,7 @@ body #content {
     display: none;
   }
 }
-/* 
+/*
  * For Stupid IE9
  */
 .ie9 #header:not(.sidebar-toggled).header-up {
